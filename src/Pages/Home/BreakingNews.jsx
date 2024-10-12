@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 const BreakingNews = () => {
   return (
-    <div className="flex items-center justify-center mt-4">
+    <div className="bg-gray-100 flex items-center justify-center mt-4">
       <button className="btn btn-secondary">Breking News</button>
       <Marquee pauseOnHover={true} speed={200}>
         <Link className="mr-10" to='/'> Match Highlights: Germany vs Spain — as it happened</Link>

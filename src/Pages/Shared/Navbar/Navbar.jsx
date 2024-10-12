@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import userDefaultPic from '../../../assets/user.png'
 
 const Navbar = () => {
   const links = <>
     <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/">About</NavLink></li>
-    <li><NavLink to="/">Career</NavLink></li>
+    <li><NavLink to="/about">About</NavLink></li>
+    <li><NavLink to="/career">Career</NavLink></li>
   </>
   return (
     <div className="mt-10">
@@ -38,7 +39,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img
+                alt="user"
+                src={userDefaultPic} />
+            </div>
+          </div>
+          <Link to="/login" className="btn">Login</Link>
         </div>
       </div>
     </div>
