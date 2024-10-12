@@ -9,7 +9,7 @@ const Navbar = () => {
   </>
   return (
     <div className="mt-10">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-sky-700 rounded-lg text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,7 +46,7 @@ const Navbar = () => {
                 src={userDefaultPic} />
             </div>
           </div>
-          <Link to="/login" className="btn">Login</Link>
+          <Link to="/login" className="btn btn-info">Login</Link>
         </div>
       </div>
     </div>
