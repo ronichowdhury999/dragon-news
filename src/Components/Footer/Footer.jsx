@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <div><footer className="footer bg-white items-center p-4">
+        <div><footer className="footer items-center p-4">
             <aside className="grid-flow-col items-center">
                 <img className="w-10 rounded-full" src="https://i.ibb.co.com/Bf0TtnY/profile-Img2.jpg" alt="" />
                 <p>Copyright © {new Date().getFullYear()} - All right reserved</p>

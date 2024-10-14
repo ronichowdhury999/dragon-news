@@ -6,10 +6,11 @@ const Navbar = () => {
     <li><NavLink to="/">Home</NavLink></li>
     <li><NavLink to="/about">About</NavLink></li>
     <li><NavLink to="/career">Career</NavLink></li>
+    <li><NavLink to="/login">Login</NavLink></li>
   </>
   return (
-    <div className="mt-10">
-      <div className="navbar bg-sky-700 rounded-lg text-white">
+    <div className="">
+      <div className="navbar rounded-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,7 +47,7 @@ const Navbar = () => {
                 src={userDefaultPic} />
             </div>
           </div>
-          <Link to="/" className="btn btn-info">Login</Link>
+          <Link to="/" className="btn btn-info ml-4">Login</Link>
         </div>
       </div>
     </div>
