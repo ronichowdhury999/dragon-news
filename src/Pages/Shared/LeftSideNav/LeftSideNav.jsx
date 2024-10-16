@@ -7,7 +7,6 @@ import blogImg3 from "../../../assets/3.png"
 
 const LeftSideNav = () => {
     const [categories, setCategories] = useState([])
-    console.log(categories);
     useEffect(() => {
         fetch('categories.json')
             .then(res => res.json())
