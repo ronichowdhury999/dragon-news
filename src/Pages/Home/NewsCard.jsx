@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
+import PropTypes from 'prop-types';
 
 const NewsCard = ({ aNews }) => {
-    const { title,image_url, details, _id } = aNews
+    const { title, image_url, details, _id } = aNews
     return (
         <div>
             <div className="card bg-base-100 w-full shadow-xl">
@@ -16,7 +17,7 @@ const NewsCard = ({ aNews }) => {
                     {
                         details.length > 200 ? <p>{details.slice(0, 200)}<br />
                             <Link to={`/newsDetails/${_id}`}
-                                className="text-blue-600 font-bold">Read more ...</Link></p>
+                                className="text-sky-400 font-bold">Read more ...</Link></p>
                             : <p>{details}</p>
 
                     }
@@ -28,3 +29,8 @@ const NewsCard = ({ aNews }) => {
 }
 
 export default NewsCard
+
+NewsCard.propTypes = {
+    aNews: PropTypes.object.isRequired
+}
+

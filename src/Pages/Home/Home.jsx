@@ -6,6 +6,7 @@ import RightSideNav from "../Shared/RightSideNav/RightSideNav"
 import BreakingNews from "./BreakingNews"
 import NewsCard from "./NewsCard"
 import { useState } from "react"
+import coverImg from '../../assets/bg1.png';
 
 const Home = () => {
   const news = useLoaderData();
@@ -35,6 +36,24 @@ const Home = () => {
         {/* right side  */}
         <div className="">
           <RightSideNav />
+          
+            {/* Amazing news papper */}
+            <div>
+                <div className="hero px-4">
+                    <img className="w-full" src={coverImg} alt="" />
+                    <div className="hero-overlay bg-opacity-30">
+                    </div>
+                    <div className="hero-content text-neutral-content text-center">
+                        <div className="">
+                            <h1 className="mb-5 text-2xl font-bold">Create an Amazing Newspaper</h1>
+                            <p className="mb-5">
+                            Discover thousands of options, easy to customize layouts, one-click to import demo and much more.
+                            </p>
+                            <button className="btn btn-primary">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </div>

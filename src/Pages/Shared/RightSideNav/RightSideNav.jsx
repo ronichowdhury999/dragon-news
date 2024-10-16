@@ -3,10 +3,9 @@ import { FcGoogle } from "react-icons/fc";
 import swimmingImg from '../../../assets/qZone1.png'
 import classImg from '../../../assets/qZone2.png'
 import playGroundImg from '../../../assets/qZone3.png'
-import coverImg from '../../../assets/bg1.png';
 const RightSideNav = () => {
     return (
-        <div className="bg-gray-100">
+        <div className="">
             {/* login with google,github section */}
             <div className="px-4 space-y-3 ">
                 <h2 className="text-xl">Login with</h2>
@@ -42,23 +41,6 @@ const RightSideNav = () => {
                     <img src={swimmingImg} alt="" />
                     <img src={classImg} alt="" />
                     <img src={playGroundImg} alt="" />
-                </div>
-            </div>
-            {/* Amazing news papper */}
-            <div>
-                <div className="hero px-4">
-                    <img className="w-full" src={coverImg} alt="" />
-                    <div className="hero-overlay bg-opacity-30">
-                    </div>
-                    <div className="hero-content text-neutral-content text-center">
-                        <div className="">
-                            <h1 className="mb-5 text-2xl font-bold">Create an Amazing Newspaper</h1>
-                            <p className="mb-5">
-                            Discover thousands of options, easy to customize layouts, one-click to import demo and much more.
-                            </p>
-                            <button className="btn btn-primary">Learn More</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

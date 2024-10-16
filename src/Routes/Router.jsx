@@ -13,7 +13,7 @@ const Router = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
-        errorElement:<ErrorPage/>,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
@@ -24,7 +24,8 @@ const Router = createBrowserRouter([
                 path: '/newsDetails/:id',
                 element: <PrivateRoute>
                     <NewsDetails />,
-                </PrivateRoute>
+                </PrivateRoute>,
+                loader: () => fetch('/news.json')
             },
             {
                 path: '/about',

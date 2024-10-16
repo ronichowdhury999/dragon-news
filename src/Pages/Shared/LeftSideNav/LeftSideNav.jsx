@@ -13,7 +13,7 @@ const LeftSideNav = () => {
             .then(data => setCategories(data));
     }, [])
     return (
-        <div className="px-4 bg-gray-100">
+        <div className="px-4 ">
             <div>
                 <h2 className="text-2xl">All Categories</h2>
                 {categories && categories.map(category => <Link className="block p-4 ml-10 font-semibold hover:underline"
