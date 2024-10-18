@@ -51,13 +51,16 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+          {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img
                 alt="user"
                 src={userDefaultPic} />
             </div>
-          </div>
+          </div> */}
+            <div>
+              {user && <span>{user.email}</span>}
+            </div>
           {user ?
             <button onClick={handelSignOut} className="btn btn-info ml-4">Sign Out</button>
             :

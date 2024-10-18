@@ -3,13 +3,28 @@ import { FcGoogle } from "react-icons/fc";
 import swimmingImg from '../../../assets/qZone1.png'
 import classImg from '../../../assets/qZone2.png'
 import playGroundImg from '../../../assets/qZone3.png'
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 const RightSideNav = () => {
+    const {googleLogin,setUser}= useContext(AuthContext);
+
+    const handelGoogleLogin =()=>{
+        googleLogin()
+        .then(result =>{
+            const currentUser = result.user;
+            console.log(currentUser);
+            setUser(currentUser)
+        })
+        .catch(error=>{
+            console.error(error)
+        });
+    }
     return (
         <div className="">
             {/* login with google,github section */}
             <div className="px-4 space-y-3 ">
                 <h2 className="text-xl">Login with</h2>
-                <button className="btn btn-outline w-full">
+                <button onClick={handelGoogleLogin} className="btn btn-outline w-full">
                     <FcGoogle />
                     Login with Google
                 </button>
