@@ -1,14 +1,16 @@
 import { Link, useLocation, useNavigate, } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
     const { signInUser } = useContext(AuthContext);
+    const [passwordVisible, setPasswordVisible] = useState(false);
     const location = useLocation();
     const navigate = useNavigate()
-    console.log(location);
-
+    console.log(location)
     const handelLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -44,7 +46,16 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                                <div className="relative">
+                                    <input
+                                        name="password"
+                                        type={passwordVisible ? 'text' : 'password'}
+                                        placeholder="password"
+                                        className="input input-bordered w-full"
+                                        required />
+                                    <button className="absolute top-4 right-3" onClick={() => setPasswordVisible(!passwordVisible)}>{passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                                    </button>
+                                </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>

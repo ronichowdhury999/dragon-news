@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
-import { useContext, } from "react";
+import { useContext, useState, } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 const Register = () => {
     const { createUser } = useContext(AuthContext);
-    
+    const [passwordVisible, setPasswordVisible] = useState(false)
+
     const handelRegister = e => {
         e.preventDefault();
         // deffarent way data collect to form value;
@@ -19,6 +22,7 @@ const Register = () => {
             .then(result => {
                 const currentUser = result.user
                 console.log(currentUser);
+                e.target.reset()
             })
             .catch(err => {
                 console.error(err.message);
@@ -55,13 +59,22 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                                <div className="relative">
+                                    <input
+                                        name="password"
+                                        type={passwordVisible ? 'text' : 'password'}
+                                        placeholder="password"
+                                        className="input input-bordered w-full"
+                                        required />
+                                    <button className="absolute top-4 right-3" onClick={() => setPasswordVisible(!passwordVisible)}>{passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                                    </button>
+                                </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control">
-                                <button className="btn btn-info">Login</button>
+                                <button className="btn btn-info">Register</button>
                             </div>
                         </form>
                         <p className="text-center pb-4">Already have an account? Please  <Link className="underline text-sky-400 hover:text-blue-800" to="/login">Login</Link></p>
